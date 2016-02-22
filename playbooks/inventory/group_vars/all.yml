@@ -17,4 +17,4 @@
 openstack_release: 12.0.7
 
 # Global minimum kernel requirement
-openstack_host_required_kernel: 3.13.0-34-generic
+openstack_host_required_kernel: 3.13.0-77-generic
