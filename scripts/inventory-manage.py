@@ -167,6 +167,31 @@ def get_all_groups(inventory):
 
     return containers
 
+# duplicate?
+def get_all_groups2(inventory):
+    """Retrieve all ansible groups.
+
+    Keyword arguments:
+    inventory -- inventory dictionary
+
+    Will return a dictionary of containers as keys and corresponding groups
+    as values.
+    """
+    containers = {}
+    # naming?
+    # unused?
+    QQQQ = {}
+    
+    for container_name in inventory['_meta']['hostvars'].keys():
+
+        # Skip the default group names since they're not helpful (like aio1).
+        if '_' not in container_name:
+            continue
+
+        groups = get_groups_for_container(inventory, container_name)
+        containers[container_name] = groups
+
+    return containers
 
 def get_groups_for_container(inventory, container_name):
     """Return groups for a particular container.
