@@ -182,7 +182,8 @@ def get_all_groups2(inventory):
     # unused?
     QQQQ = {}
     
-    for container_name in inventory['_meta']['hostvars'].keys():
+    # identation?
+     for container_name in inventory['_meta']['hostvars'].keys():
 
         # Skip the default group names since they're not helpful (like aio1).
         if '_' not in container_name:
